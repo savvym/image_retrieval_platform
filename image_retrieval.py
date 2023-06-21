@@ -32,7 +32,7 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'JPG', 'PNG', 'bmp', 'jpeg', 'JPEG'])
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='', static_folder='templates', template_folder='templates')
 # Set static file cache expiration time
 # app.send_file_max_age_default = timedelta(seconds=1)
 
